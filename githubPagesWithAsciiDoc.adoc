@@ -1,0 +1,149 @@
+= Mi Documentación con AsciiDoc
+Abdellah Lamrabat
+:toc: left
+:icons: font
+
+== Introducción
+GitHub Pages es un servicio gratuito que permite alojar y publicar sitios web directamente desde un repositorio de GitHub. En este documento, aprenderás a usar **AsciiDoc** y **Asciidoctor** para crear y publicar documentación técnica o sitios web mediante este servicio.
+
+Este tutorial cubrirá desde los pasos básicos de configuración de GitHub Pages hasta el uso avanzado de herramientas como **Asciidoctor** y complementos como Jekyll.
+
+== ¿Qué es GitHub Pages?
+GitHub Pages es ideal para publicar:
+- Documentación técnica.
+- Blogs y manuales.
+- Presentaciones y portafolios.
+
+Permite alojar contenido escrito en lenguajes de marcado como **AsciiDoc** o **Markdown**, y ofrece personalización adicional a través de herramientas como Jekyll.
+
+== Configuración Básica de GitHub Pages
+
+=== Crear un Repositorio
+1. Ve a GitHub y crea un nuevo repositorio (por ejemplo: `mi-documentacion`).
+2. Inicializa el repositorio con un README seleccionando la opción **Initialize this repository with a README**.
+
+=== Subir tus Archivos `.adoc`
+1. Crea tus documentos en formato AsciiDoc, como `index.adoc`.
+2. Sube los archivos al repositorio utilizando la interfaz web de GitHub o desde la línea de comandos
+
+=== Habilitar GitHub Pages
+1. Ve a **Settings** en el repositorio y busca la sección **Pages**.
+2. En **Source**, selecciona la rama desde donde se publicará el sitio, como `main` o `gh-pages`.
+3. Una vez habilitado, GitHub generará un enlace para tu sitio, como `https://tu-usuario.github.io/mi-documentacion`.
+
+== Publicar Contenido Avanzado
+
+=== Usar Asciidoctor para Transformar Archivos
+**Asciidoctor** permite generar archivos HTML a partir de documentos `.adoc`. Esto es útil para personalizar tu sitio antes de subirlo.
+
+==== Instalación de Asciidoctor
+Para instalar Asciidoctor, usa el siguiente comando:
+
+[source,bash]
+----
+gem install asciidoctor
+----
+
+==== Transformar Archivos `.adoc` en HTML
+Ejecuta este comando para convertir un archivo `.adoc` en HTML:
+
+[source,bash]
+----
+asciidoctor index.adoc
+----
+Esto generará un archivo `index.html` que puedes subir directamente al repositorio.
+
+=== Usar Jekyll con AsciiDoc
+GitHub Pages soporta Jekyll, que ofrece una experiencia más avanzada para gestionar y personalizar tu sitio.
+
+==== Configuración Básica de Jekyll
+1. Instala Jekyll en tu sistema:
+
+[source,bash]
+----
+gem install jekyll bundler
+----
+
+2. En el archivo `_config.yml`, agrega el soporte para AsciiDoc:
+
+[source,yaml]
+----
+plugins:
+- jekyll-asciidoc
+----
+
+3. Escribe tus documentos en formato `.adoc` y publícalos siguiendo los pasos básicos de GitHub Pages.
+
+== Personalización Avanzada
+
+=== Agregar Estilos CSS
+Puedes personalizar el diseño visual de tus documentos AsciiDoc incluyendo una hoja de estilos CSS.
+
+==== Crear una Hoja de Estilos
+Escribe un archivo `estilos.css` con contenido como este:
+
+[source,css]
+----
+body {
+font-family: Arial, sans-serif;
+}
+h1 {
+color: #ff6600;
+}
+----
+
+Incluye esta hoja de estilos en tu archivo `.adoc` usando el atributo `:stylesheet:`:
+
+[source,adoc]
+----
+:stylesheet: estilos.css
+----
+
+=== Estructura de un Proyecto Completo
+Un ejemplo de cómo podría organizarse tu proyecto:
+
+[source]
+----
+mi-documentacion/
+├── index.adoc
+├── estilos.css
+└── imagenes/
+└── ejemplo.png
+----
+Sube esta estructura a tu repositorio y habilita GitHub Pages para ver el resultado en la web.
+
+== Demo: Publicación Paso a Paso
+=== Crear y Editar un Archivo `.adoc`
+Escribe tu primer archivo `index.adoc`:
+
+[source,adoc]
+----
+= Mi Documentación con AsciiDoc
+Abdellah Lamrabat
+:toc: left
+:icons: font
+
+== Introducción
+Esta es mi primera documentación usando AsciiDoc y publicada en GitHub Pages.
+----
+
+=== Transformar a HTML
+Usa el siguiente comando para convertir tu archivo `.adoc` a HTML:
+
+[source,bash]
+----
+asciidoctor index.adoc
+----
+
+=== Publicar en GitHub Pages
+Sube el archivo generado (`index.html`) o el propio `.adoc` a tu repositorio, habilita Pages, y accede al sitio web generado.
+
+== Conclusión
+Publicar documentación en GitHub Pages usando AsciiDoc y Asciidoctor es una solución poderosa para crear contenido técnico. La flexibilidad de estas herramientas permite a los desarrolladores centrarse en la calidad del contenido mientras aprovechan una interfaz sencilla para la publicación.
+
+Si tienes dudas o necesitas personalización adicional, ¡explora más sobre estas herramientas en sus respectivas documentaciones!
+
+=== ¿Cómo usarlo?
+1. Guarda este texto en un archivo llamado `README.adoc` o `index.adoc`.
+2. Sube el archivo a tu repositorio en GitHub.
+3. Habilita GitHub Pages siguiendo las instrucciones descritas en el documento.
