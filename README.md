@@ -14,7 +14,8 @@ Este repositorio contiene un tutorial paso a paso sobre cómo crear y publicar d
 
 Puedes acceder al tutorial completo en línea haciendo clic en el siguiente enlace:
 
-[AsciiDoc Documentation Tutorial]([https://abdedevs.github.io/AsciiDoc-GitHub-Pages-Tutorial/])
+[AsciiDoc Documentation Tutorial](https://abdedevs.github.io/AsciiDoc-GitHub-Pages-Tutorial/)
+
 
 ## Cómo usar este repositorio
 
